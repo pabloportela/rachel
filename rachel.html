@@ -1,0 +1,38 @@
+<head>
+    <title>Rachel</title>
+</head>
+
+<body>
+    <div class="container" style="width: 500px;">
+        <h2>Rachel (random chat)</h2>
+        <p>Rachel is a simple chat built on top of meteor. Should be fast.</p>
+        {{> rachem}}
+    </div><!-- /.container -->
+</body>
+
+<template name="rachem">
+
+<form class="form-inline" role="form">
+    <input type="text" class="form-control" id="from" placeholder="your name" style="width: 100px;">
+    &nbsp;
+    <input type="text" class="form-control" id="newtext" placeholder="your message">
+    &nbsp;
+    <button type="submit" class="btn btn-success">Send</button>
+</form>
+
+    <table class="table">
+    {{#each chats}}
+        {{> chat}}
+    {{/each}}
+    </table>
+
+</template>
+
+<template name="chat">
+    <tr>
+        <td class="text-left" style="width: 100px">{{time}}</td>
+        <td class="text-left" style="width: 100px">{{from}}</td>
+        <td class="text-left">{{text}}</td>
+    </tr>
+</template>
+
